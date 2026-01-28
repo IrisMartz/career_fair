@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSU Career Fair - Guest List</title>
+    <style>
+        /* BSU Official Brand Colors */
+        :root {
+            --bsu-red: #BA0C2F;
+            --bsu-white: #FFFFFF;
+            --bsu-black: #000000;
+            --bsu-gray: #54585A;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Recommended BSU text font */
+            margin: 0;
+            background-color: #f4f4f4;
+            color: var(--bsu-black);
+        }
+
+        header {
+            background-color: var(--bsu-red);
+            color: var(--bsu-white);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--bsu-black);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Search Bar */
+        #searchInput {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 2rem;
+            border: 2px solid var(--bsu-gray);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        /* Card Layout */
+        .guest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .guest-card {
+            background: var(--bsu-white);
+            border-left: 6px solid var(--bsu-red);
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .guest-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .guest-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--bsu-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .guest-industry {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--bsu-gray);
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Industry Career Fair</h1>
+    <p>Hospitality • Construction Management • Fashion</p>
+</header>
+
+<div class="container">
+    <input type="text" id="searchInput" onkeyup="filterGuests()" placeholder="Search by name, company, or major...">
+
+    <div class="guest-grid" id="guestGrid">
+        <div class="guest-card">
+            <span class="guest-industry">Hospitality</span>
+            <div class="guest-name">Hilton Worldwide</div>
+            <p>Recruiting for: Guest Relations, Event Management</p>
+        </div>
+
+        <div class="guest-card">
+            <span class="guest-industry">Construction</span>
+            <div class="guest-name">Meyer Najem</div>
+            <p>Recruiting for: Project Managers, Estimators</p>
+        </div>
+
+        <div class="guest-card">
+            <span class="guest-industry">Fashion</span>
+            <div class="guest-name">Nordstrom</div>
+            <p>Recruiting for: Merchandising, Retail Leadership</p>
+        </div>
+        
+        </div>
+</div>
+
+<script>
+    function filterGuests() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.getElementsByClassName('guest-card');
+
+        for (let i = 0; i < cards.length; i++) {
+            let text = cards[i].innerText.toLowerCase();
+            if (text.includes(input)) {
+                cards[i].classList.remove('hidden');
+            } else {
+                cards[i].classList.add('hidden');
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
