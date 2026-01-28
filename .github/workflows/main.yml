@@ -5,20 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BSU Career Fair - Guest List</title>
     <style>
-        /* BSU Official Brand Colors */
-        :root {
-            --bsu-red: #BA0C2F;
-            --bsu-white: #FFFFFF;
-            --bsu-black: #000000;
-            --bsu-gray: #54585A;
-        }
+    /* BSU Official Brand Colors */
+    :root {
+        --bsu-red: #BA0C2F;
+        --bsu-white: #FFFFFF;
+        --bsu-black: #000000;
+        --bsu-gray: #54585A;
+    }
 
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Recommended BSU text font */
-            margin: 0;
-            background-color: #f4f4f4;
-            color: var(--bsu-black);
-        }
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #000000;
+    }
+</style>
 
         header {
             background-color: var(--bsu-red);
